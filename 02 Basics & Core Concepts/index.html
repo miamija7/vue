@@ -18,8 +18,10 @@
     </header>
     <section id="user-goal">
       <!-- in·ter·po·la·tion : the insertion of something of a different nature into something else -->
-      <h2>{{ courseGoal }}</h2>
-      <p></p>
+      <h2>My Course Goals</h2>
+      <p>{{ outputGoal() }}</p>
+      <p>{{ courseGoal }}</p>
+      <p>Learn more about <a v-bind:href="vueLink">Vue</a>!</p>
     </section>
   </body>
 </html>
