@@ -1,0 +1,28 @@
+============= Overview =============
+
+In this course you will learn:
+
+BASICS
+- core syntax
+- templates
+- directives
+- data
+- methods
+- computed properties
+- watchers
+
+INTERMEDIATE
+- components
+- component communication
+- behind the scenes
+- forms
+- http
+- routing
+- animations
+
+ADVANCED
+- vuex
+- authentication
+- deployment & optimization
+- composition API
+- re-using code 
