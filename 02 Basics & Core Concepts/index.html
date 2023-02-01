@@ -24,7 +24,7 @@
        <p>Learn more about <a v-bind:href="vueLink">Vue</a>!</p>
        <!-- methods --> 
        <p>{{ outputGoal() }}</p>
-       <!-- v-html : add html code (WARNING: cross-site scripting vulnerablity) -->
+       <!-- v-html : output raw HTML (WARNING: cross-site scripting vulnerablity) -->
        <p v-html="courseGoalHtml"></p>
     </section>
   </body>
