@@ -1,3 +1,5 @@
+
+/////// Vanilla JS ///////
 // const buttonEl = document.querySelector('button');
 // const inputEl = document.querySelector('input');
 // const listEl = document.querySelector('ul');
@@ -10,4 +12,18 @@
 //     inputEl.value = '';
 // })
 
-Vue.createApp({});
+/////// Vue.js ///////
+Vue.createApp({
+    data() {
+        return {
+            goals: [],
+            enteredValue: ''
+        };
+    },
+    methods: {
+        addGoal() {
+            this.goals.push(this.enteredValue);
+            this.enteredValue = '';
+        }
+    }
+}).mount('#app');
