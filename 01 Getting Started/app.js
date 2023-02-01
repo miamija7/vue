@@ -1,11 +1,13 @@
-const buttonEl = document.querySelector('button');
-const inputEl = document.querySelector('input');
-const listEl = document.querySelector('ul');
+// const buttonEl = document.querySelector('button');
+// const inputEl = document.querySelector('input');
+// const listEl = document.querySelector('ul');
+//
+// buttonEl.addEventListener('click', () =>{
+//     const enteredValue = inputEl.value;
+//     const listItemEl = document.createElement('li');
+//     listItemEl.textContent = enteredValue;
+//     listEl.append(listItemEl);
+//     inputEl.value = '';
+// })
 
-buttonEl.addEventListener('click', () =>{
-    const enteredValue = inputEl.value;
-    const listItemEl = document.createElement('li');
-    listItemEl.textContent = enteredValue;
-    listEl.append(listItemEl);
-    inputEl.value = '';
-})
+Vue.createApp({});
