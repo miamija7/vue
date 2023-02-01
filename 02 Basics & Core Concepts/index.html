@@ -17,11 +17,15 @@
       <h1>Vue Course Goals</h1>
     </header>
     <section id="user-goal">
-      <!-- in·ter·po·la·tion : the insertion of something of a different nature into something else -->
       <h2>My Course Goals</h2>
-      <p>{{ outputGoal() }}</p>
-      <p>{{ courseGoal }}</p>
-      <p>Learn more about <a v-bind:href="vueLink">Vue</a>!</p>
+       <!-- interpolation : the insertion of something of a different nature into something else -->
+       <p>{{ courseGoal }}</p>
+       <!-- v-binding : bind attributes --> 
+       <p>Learn more about <a v-bind:href="vueLink">Vue</a>!</p>
+       <!-- methods --> 
+       <p>{{ outputGoal() }}</p>
+       <!-- v-html : add html code (WARNING: cross-site scripting vulnerablity) -->
+       <p v-html="courseGoalHtml"></p>
     </section>
   </body>
 </html>
