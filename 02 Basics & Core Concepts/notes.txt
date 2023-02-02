@@ -70,4 +70,16 @@ re-executes everytime   data depending on data              non-data updates
 ============= Styling =============
 
 Inline:
-    :style="{borderColor: a ? 'red' : '#ccc'}"
+    class="demo" :style="{borderColor: a ? 'red' : '#ccc'}"
+    :class="a ? 'demo active' : 'demo'"
+    :class="{demo: true, active: a}"
+    class="demo" :class="{active: a}"
+    
+Computed Properties:
+- removes logic from html
+- places logic in computed!
+
+    HTML:       :class="{active: a}"
+            to
+    HTML:       :class="aClasses"
+    COMPUTED:   aClasses() { return {active: a}; }

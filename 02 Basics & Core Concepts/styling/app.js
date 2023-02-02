@@ -6,6 +6,17 @@ const app = Vue.createApp({
             c: false
         };
     },
+    computed: {
+        aClasses() { 
+            return { active: this.a };
+        },
+        bClasses() { 
+            return { active: this.b };
+        },
+        cClasses() { 
+            return { active: this.c };
+        }
+    },
     methods: {
         select(box) {
             if(box.toLowerCase() === 'a') this.a = !this.a;
