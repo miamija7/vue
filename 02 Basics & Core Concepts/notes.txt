@@ -1,5 +1,18 @@
-============= Interpolation / Vue Bind  =============
+============= Outine  =============
 
-Syntax:
-    {{ vueData }}
-    v-bind:attribute="vueData"
+New Vue App:
+- creating vue apps
+    const app = Vue.createApp({ ... })
+    app.mount('...')
+
+Data Binding:
+interpolation       <el>{{ ... }}</el>
+binding             <el v-bind:href='...'>...</el>
+raw html            <el v-html='...'></el>
+
+App Options:
+    data () { ... },
+    methods: {
+        function() { ... },
+        function() { ... }
+    }
