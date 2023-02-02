@@ -64,3 +64,10 @@ METHOD                  COMPUTED                            WATCH
 data binding            only data binding                   not in template
 event binding           executes on dependency changes      reacts to changed data
 re-executes everytime   data depending on data              non-data updates
+
+
+
+============= Styling =============
+
+Inline:
+    :style="{borderColor: a ? 'red' : '#ccc'}"
