@@ -1,4 +1,4 @@
-============= Outine  =============
+============= Core Concepts  =============
 
 New Vue App:
 - creating vue apps
