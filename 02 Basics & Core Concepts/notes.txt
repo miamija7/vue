@@ -16,3 +16,10 @@ App Options:
         function() { ... },
         function() { ... }
     }
+
+
+============= Event Binding  =============
+
+TWO WAY BINDING: Listening & Writting 
+    v-bind:value="name" v-on:input="setName"
+    v-model="name"
