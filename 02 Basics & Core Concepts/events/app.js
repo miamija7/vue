@@ -3,20 +3,32 @@ const app = Vue.createApp({
     return {
       counter: 0,
       name: '',
+      lastname: '',
+      //fullname: '',
       confirmedName: '',
       email: ''
     };
   }, 
+  watch: {
+    counter(value){
+      if (value > 50) this.counter = 0;
+    }
+    // name(value){
+    //   console.log('runnin again...');
+    //   if (value === '') this.fullname = '';
+    //   else this.fullname = value + ' ' + 'Evans';
+    // }
+  },
   computed: {
     fullname(){
       console.log('Running Again...');
       if(this.name === '') return '';
-      return this.name + ' ' + 'Evans';
+      return this.name + ' ' + this.lastname;
     }
   },
   methods: {
     add(num) {
-      if (this.counter < 10) {this.counter = this.counter + num}
+      if (this.counter < 100) {this.counter = this.counter + num}
     },
     minus(num) {
       if(this.counter > 0) {this.counter = this.counter - num}
@@ -35,6 +47,7 @@ const app = Vue.createApp({
     },
     resetInput() {
       this.name = '';
+      this.lastname = '';
     }
 
   }

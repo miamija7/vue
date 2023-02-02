@@ -25,6 +25,7 @@
 
       <label for="name">Name: </label>
       <input id="name" type="text" v-model="name" v-on:keyup.enter="confirmInput">
+      <input id="name" type="text" v-model="lastname" v-on:keyup.enter="confirmInput">
       <button v-on:click="resetInput">Reset Input</button>
       <p>Your Name: {{ fullname }}</p>
 

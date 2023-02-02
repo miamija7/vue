@@ -18,13 +18,16 @@ App Options:
     }
 
 
-============= Event Binding  =============
+============= Event Binding =============
 
 TWO WAY BINDING: Listening & Writting 
     v-bind:value="name" v-on:input="setName"
     v-model="name"
 
 NOTE: running one method on your page will run every method on your page
+
+
+============= Computed Properties =============
 
 Computed Properties:
 - Vue is aware of the dependencies of the computed properties
@@ -35,3 +38,24 @@ Computed Properties:
 - do not use them as methods/events
 - bind events to methods
 - do not bind events to computed properties
+
+
+============= Watchers  =============
+
+- you can use watchers instead of computed properties
+- define methods in watchers
+- whenever data "name" changes, "name" watcher method will execute automatically
+- no returning, just logic
+- value is automatically passed & previous value
+- alternative for computed property
+CONS: if we have two properties.... use computed
+
+
+
+============= Methods vs Computed vs Watch =============
+
+
+METHOD                  COMPUTED                            WATCH
+data binding            only data binding                   not in template
+event binding           executes on dependency changes      reacts to changed data
+re-executes everytime   data depending on data              non-data updates
