@@ -26,7 +26,12 @@ TWO WAY BINDING: Listening & Writting
 
 NOTE: running one method on your page will run every method on your page
 
+    v-on:click
+    @click
 
+    v-bind:value
+    :value
+    
 ============= Computed Properties =============
 
 Computed Properties:
