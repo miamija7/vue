@@ -7,6 +7,13 @@ const app = Vue.createApp({
       email: ''
     };
   }, 
+  computed: {
+    fullname(){
+      console.log('Running Again...');
+      if(this.name === '') return '';
+      return this.name + ' ' + 'Evans';
+    }
+  },
   methods: {
     add(num) {
       if (this.counter < 10) {this.counter = this.counter + num}

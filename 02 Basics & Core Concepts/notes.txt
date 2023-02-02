@@ -23,3 +23,15 @@ App Options:
 TWO WAY BINDING: Listening & Writting 
     v-bind:value="name" v-on:input="setName"
     v-model="name"
+
+NOTE: running one method on your page will run every method on your page
+
+Computed Properties:
+- Vue is aware of the dependencies of the computed properties
+- it will cache the computed property only if that property changes
+- better for outputting values
+- if you want to recalculate anytime something changes
+- only use computed properties for outputting something
+- do not use them as methods/events
+- bind events to methods
+- do not bind events to computed properties
