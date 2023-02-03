@@ -83,3 +83,40 @@ Computed Properties:
             to
     HTML:       :class="aClasses"
     COMPUTED:   aClasses() { return {active: a}; }
+
+- binding classes can also be passed an array of objects
+
+    :class="['demo', {active: a}, {anotherClass: truthy/falsy}]"
+
+
+============= Section Summary =============
+
+DOM & TEMPLATES:
+- Vue interacts with the DOM by managing templates that allow you to use Vue features that reflect on the page
+- Vue allows you to define the goal, rather than the steps, following the => Declarative Approach
+    + You define how the page should look, what parts are dynamic, and Vue figures out how to get there
+- Vue connects to the html code via "mount"
+    + Vue renders the true DOM based on the connection template
+    + CSS selectors are used to turn html code into the template for the Vue app
+    + Once there is a connection you can use Vue features
+
+DATA & EVENT BINDING:
+- Outputting Data
+    + data can be output into templates using "{{ }}" or "v-bind:" or ":"
+    + you can bind data via interpolation or bind directives (bind html attributes to some dynamic value)
+- Inputting Data
+    + listen for events via "v-on" or "@" method
+
+REACTIVITY:
+- Vue had a reactivity system
+- Vue will update the real DOM for you when bound data ( {{}} / : ) changes
+- Register data in the data option of your Vue app
+- Computed Properties and Watchers calculate results dynamically or to run some code when data changes
+
+STYLING:
+- Vue isn't just text/data input & output
+- Dynamic CSS classes and inline style bindings are supported in Vue
+- Special syntax's offered for efficient binding
+    + object based      :class="{}"
+    + array based       :class="[{},{},'']"
+
