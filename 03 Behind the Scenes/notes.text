@@ -40,3 +40,18 @@ Lifecycle hooks:
 - updated()
 - beforeUnmount()
 - unmounted()
+
+    beforeCreate() {
+        console.log('beforeCreate()');
+    }
+
+Triggers for new lifecycle hooks:
+- New App Created
+- Data Changed
+- Instance Unmounted
+    setTimeout(function () {
+        app.unmount();
+    }, 3000);
+
+
+    
