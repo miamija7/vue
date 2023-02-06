@@ -1,0 +1,42 @@
+============= Templates  =============
+
+Template: 
+- HTML code mounted by Vue
+- 2 ways to create templates
+    MOUNT:              app.mount('#app');
+    APP OPTION:         template: `<p>{{ favFood }}</p>`
+
+
+
+============= Templates  =============
+
+
+ref="userText"
+this.message = this.$refs.userText.value
+
+
+============= Virtual DOM  =============
+
+Vue Instance                                Browser DOM
+- Stores data                               - DOM gets a Vue rendered template
+- Stores computed properties   <- VD ->     - re-renders only updates
+- Stores methods                            
+
+(VD) Virtual DOM: Updates are meade to the virtual DOM first, only divverences are rendered to the real DOM
+- lives in memory
+- speeds up performance because the real DOM renders to the screen
+- it does not read the entire DOM 
+- it compares the virtal DOM to the real DOM
+
+
+============= Vue Instance Lifescycle  =============
+
+Lifecycle hooks:
+- beforeCreate()
+- created() 
+- beforeMount()  
+- mounted()
+- beforeUpdate()
+- updated()
+- beforeUnmount()
+- unmounted()
