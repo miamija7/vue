@@ -23,3 +23,41 @@ Components:
 - compenents are mini apps in a Vue main app
 
 
+============= Vue CLI =============
+
+* Better Project Setups
+
+1. We need a Proper (Development) Web Server, served via https:// not file:// protocol
+2. We will want a better developer experience: auto reload, autocomplete & IDE support, readability
+
+
+Vue CLI Install & Setup:
+
+    "scripts": {  
+        "serve": "export NODE_OPTIONS=--openssl-legacy-provider && vue-cli-service serve",  
+        "build": "export NODE_OPTIONS=--openssl-legacy-provider && vue-cli-service build",  
+        "lint": "export NODE_OPTIONS=--openssl-legacy-provider && vue-cli-service lint"
+    },
+
+    1. You need Node.js
+        This package has installed:
+            - Node.js v19.6.0 to /usr/local/bin/node
+            - npm v9.4.0 to /usr/local/bin/npm
+        Make sure that /usr/local/bin is in your $PATH.
+    2. Install Vue CLI with npm globally
+        % sudo npm install -g @vue/cli
+    3. Create a new Vue project in your folder
+        % vue create vue-app
+            -> Vue 3
+            -> Use defaults
+    4. Run Application
+        $ cd vue-app
+        $ npm run serve
+    5. Navidate to App with the address provided
+        Local:   http://localhost:8080/ 
+        Network: http://192.168.1.89:8080/
+    6. Quit App
+        CTRL + C
+
+
+
