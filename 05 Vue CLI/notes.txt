@@ -1,0 +1,85 @@
+
+============= Vue CLI =============
+
+* Better Project Setups
+
+1. We need a Proper (Development) Web Server, served via https:// not file:// protocol
+2. We will want a better developer experience: auto reload, autocomplete & IDE support, readability
+
+
+Vue CLI Install & Setup:
+
+    "scripts": {  
+        "serve": "export NODE_OPTIONS=--openssl-legacy-provider && vue-cli-service serve",  
+        "build": "export NODE_OPTIONS=--openssl-legacy-provider && vue-cli-service build",  
+        "lint": "export NODE_OPTIONS=--openssl-legacy-provider && vue-cli-service lint"
+    },
+
+    1. You need Node.js
+        This package has installed:
+            - Node.js v19.6.0 to /usr/local/bin/node
+            - npm v9.4.0 to /usr/local/bin/npm
+        Make sure that /usr/local/bin is in your $PATH.
+    2. Install Vue CLI with npm globally
+        % sudo npm install -g @vue/cli
+    3. Create a new Vue project in your folder
+        % vue create vue-app
+            -> Vue 3
+            -> Use defaults
+    4. Run Application
+        $ cd vue-app
+        $ npm run serve
+    5. Navidate to App with the address provided
+        Local:   http://localhost:8080/ 
+        Network: http://192.168.1.89:8080/
+    6. Quit App
+        CTRL + C
+
+
+
+============= Vue Project Setup =============
+
+package.json 
+- defines the scripts we can execute
+- dependencies are packages available to us
+- dpackages that our project setup uses under the hood
+
+node_modules
+- houses the packages in package.json
+- npm doewnloads dependencies and stores them in node_modules
+- from your node project folder you can run "npm install"
+    + this looks for the package.json file
+    + downlaods all the dependencies
+    + stores them in the node_modules folder
+- contains Vue framework, dependencies, and dependencies of dependencies
+- DO NOT TOUCH
+
+public
+- index.html will be the one html file used for the app
+
+src
+- code we will write
+- contains all the js files we will write code in
+- our "main working directory"
+- main.js is the main entry point
+    + imports (exporting/importing features from one file to another)
+        import { createApp } from 'vue'
+        import App from '.App.vue'
+- App.vue
+    + .vue files allow us to write Vue apps & components in a nicer way
+        <template>...HTML CODE...</template>
+        <script>...CONFIG OBJECT...</script>
+        <style>...CSS STYLES...</style>
+    + "single file components"
+
+Build Workflow
+- code we write is not the code that runs in the browser
+- what we write uses next-gen features
+- build step changes our code to use standard JS code
+- the server recieves regualr JS code
+- package.json -> scripts -> help this transformation & build
+
+
+============= VSCode Extensions =============
+
+View -<> Extensions -> "vetur"
