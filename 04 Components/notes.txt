@@ -1,0 +1,25 @@
+============= Component Introduction =============
+
+Components:
+- needs 2 things: custom multiword HTML tag & conflict object
+- View comonent is just another Vue app
+- "Mini Apps"
+
+    app.compnent('friend-contact', {
+        data() {
+            return {detailsAreVisible: fase };
+        },
+        methods: {
+            toggleDetails() {
+                this.detailsAreVisible = !this.detailsAreVisible;
+            }
+        }
+    })
+
+- it needs a template
+- we don't mount this Component
+- we neet to add a template option!
+- COMPNENTS are small reusable pieces of HTML with connected data and logic!
+- compenents are mini apps in a Vue main app
+
+
