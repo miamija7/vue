@@ -191,7 +191,7 @@ DELETE REFRESHER:
     list = list.filter(itm => itm != deletable)
 
 
-PROVIDE + INJECT (passing data through):
+PROVIDE + INJECT (for passing data through):
 - providing data from parent and injecting it into child components (not neighbors, but only children)
 - file structure:
     App.vue
@@ -240,3 +240,33 @@ PROVIDE + INJECT (passing data through):
 
 
 PROVIDE + INJECT (for custom events)
+- remove passed events and emit objects from:
+     > App.vue
+       x ActiveElement.vue
+       > KnowledgeBase.vue
+         > KnowledgeGrid.vue
+           > KnowledgeElement.vue
+
+
+    ** KnowledgeElement.vue **
+    <template>
+        <button @click="selectTopic(id)">Learn More</button>
+    </template>
+
+    <script>
+        export default {
+            inject['selectTopic'],
+            ...
+        }
+    </script>
+
+    ** App.vue **
+    provide: {
+        topics: [{}, {},{}]
+        selectTopic: this.activateTopic
+    }
+
+
+NOTES:
+- PROPS & CUSTOM EVENTS are default!
+- EXPORT & INJECT are for special cases ;)
