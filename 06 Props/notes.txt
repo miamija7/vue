@@ -187,5 +187,56 @@ ADDING BRAND NEW COMPONENT:
     </script>
 
 
-    DELETE REFRESHER:
+DELETE REFRESHER:
     list = list.filter(itm => itm != deletable)
+
+
+PROVIDE + INJECT (passing data through):
+- providing data from parent and injecting it into child components (not neighbors, but only children)
+- file structure:
+    App.vue
+      > ActiveElement.vue
+      > KnowledgeBase.vue
+        > KnowledgeGrid.vue
+          > KnowledgeElement.vue
+
+    ** App.vue **
+    <script>
+        export default {
+            data() {
+                ...
+                provide: {
+                    topics: [{}, {},{}]
+
+                }
+            }
+        }
+    </script>
+
+    ** KnowledgeGrid.vue **
+    <script>
+        export default {
+            data() {
+                ...
+                // not props but rather
+                inject: ['topics']
+            }
+        }
+    </script>
+
+
+- convert provide from an object to a method
+    provide: {},
+    provide () {},
+
+- when provide is a method we can return data!
+- this guarentees the data(){} and provide (){} are working with the SAME exact data locations
+    provide () {
+        return {
+            topics: this.topics
+        };
+    }
+
+
+
+PROVIDE + INJECT (for custom events)
