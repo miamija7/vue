@@ -1,0 +1,26 @@
+============= Props (properties) =============
+
+- Vue has a unidirectional data flow
+- Parents -> Children
+- Components receive props from parents
+- Props should be detailed in collaborative environments!
+- Props are like variables sent from parent
+- data() is still used, but it is local variables accessible by just that one component
+
+Validating Props:
+    props: {
+        name: {
+            type: String,
+            required: true
+        }
+        phoneNumber: String,
+        emailAddress: String,
+        isFavorite: {
+            type: String,
+            required: false,
+            default: '0',
+            validation: function(value) {
+                return value === '1' || value === '0';
+            }
+        }
+    }

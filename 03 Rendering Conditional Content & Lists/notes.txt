@@ -1,0 +1,25 @@
+============= Conditional Rendering  =============
+
+DIRECTIVES:
+- V-IF
+    + add in a JavaScript expression
+    + refer to our data
+    + refer to our methods
+    + refer to our computed properties
+    + more!
+- V-ELSE
+    + can follow a v-if
+    + html element must come directly after a v-if element
+- V-ELSE-IF
+    + can follow a v-if
+- V-SHOW
+    + works standalone
+    + one important difference => display:none
+    + you don't change the DOM
+    + only use v-show if visibility status changes ALOT, otherwise ise v-if
+- V-FOR
+    + for loop
+    + item in list (preferred) || item of list
+    + v-for can return index, value
+        v-for="(goal, index) in goals"
+    + you can loop through arrays and objects!
