@@ -94,3 +94,98 @@ Child => Parent Communication:
     </script>
 
 
+Defining & Validating Custom Events:
+    ** Component.vue **
+    emits: [ 'toggle-favorite']
+        OR
+    emits: {
+        'toggle-favorite': function (id) {}
+    }
+        OR
+    emits: {
+        'toggle-favorite': function (id) {
+            if (id) { return true; }
+            else {
+                console.warn("Missing Id!");
+                return false;
+            }
+        }
+    }
+
+
+
+
+
+ADDING BRAND NEW COMPONENT:
+   ** NewFriend Component.vue **
+    <template>
+        <form @submit.prevent="submitData">
+            <div>
+                <label for="name">Name: </label>
+                <input id="name" type="text" v-model="name" />
+            </div>
+            <div>
+                <label for="phone">Phone Number: </label>
+                <input id="phone" type="tel" v-model="phone" />
+            </div>
+            <div>
+                <label for="email">Email: </label>
+                <input id="email" type="email" v-model="email" />
+            </div>
+            <button type="submit">Add Contact<button>
+        </form>
+    </template>
+
+    <script>
+    export default {
+        emit: ['add-contact'],
+        data() {
+            name: "",
+            phone: "",
+            email: ""
+        },
+        method: {
+            submitData () {
+               this.$emit('add-contact', this.name, this.phone, this.email)
+            }
+        }
+    };
+    </script>
+
+    <style>
+    </style>
+
+
+   ** NewFriend Component.vue **
+    import { createApp } from 'vue';
+    import App from './App.vue';
+    import NewFriend from '.components/NewFriend.vue';
+
+    const app = createApp(App);
+    app.component('new-friend', NewFriend)
+    app.mount('#app');
+
+
+    ** App.vue **
+    <template>
+        <new-friend @add-contact="addContact"></new-friend>
+    </template>
+
+    <script>
+        methods: {
+            addContact(name, phone, email){
+                const friendContact = {
+                    id: new Date().toISOString(),
+                    name: name,
+                    phone: phone,
+                    email: email,
+                    isFavorite: false
+                }
+                this.friends.push(friendContact);
+            }
+        }
+    </script>
+
+
+    DELETE REFRESHER:
+    list = list.filter(itm => itm != deletable)
