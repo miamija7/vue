@@ -6,8 +6,30 @@
 - Props should be detailed in collaborative environments!
 - Props are like variables sent from parent
 - data() is still used, but it is local variables accessible by just that one component
+- if we have a prop that needs a javascript value other than a string, we need to use v-bind
+- Props being passed by parents are named-like-this
+- Component props being received are namedLikeThis
+- Prop types:
+    + String
+    + Number
+    + Boolean
+    + Array
+    + Object
+    + Date
+    + Function
+    + Symbol
 
 Validating Props:
+    ** App.vue **
+    <template>
+        <friend-contact>
+            name="Arri Evans"
+            phone-number="123 456 7890"
+            :is-favorite="true"
+        </friend-contact>
+    </template
+
+    ** Component.vue **
     props: {
         name: {
             type: String,
@@ -16,11 +38,59 @@ Validating Props:
         phoneNumber: String,
         emailAddress: String,
         isFavorite: {
-            type: String,
+            type: Boolean,
             required: false,
-            default: '0',
-            validation: function(value) {
-                return value === '1' || value === '0';
-            }
+            default: false,
         }
     }
+
+
+
+Refactor with v-for:
+     ** App.vue **
+     <template>
+            <friend-contact>
+                v-for="friend in friends"
+                :key="friend.id"
+                :id="friend.id"
+                :name="friend.name"
+                :phone-number="friend.phone"
+                :email-address="friend.address"
+                :is-favorite="true"
+            </friend-contact>
+        </template
+
+
+
+Child => Parent Communication:
+- props pass data from App.vue to components
+- emitting custom events in the component allows your parent to listen for an event
+- custom events are always named-like-this
+- listen for events using v-on or @
+- this allows unidirectional data flow, in both directions! App =< Component && Component => App
+- Emit custom event from component, and listen for this custom event in App.vue, and feed updated data back to component
+
+    ** Component.vue **
+    methods: {
+        toggleIsFavorite() {
+            this.$emit('toggle-favorite', this.id);
+        }
+    }
+
+    ** App.vue **
+    <template>
+        <friend-contact>
+            @toggle-favorite="true"
+        </friend-contact>
+    </template>
+
+    <script>
+        method: {
+            toggleFavoriteStatus(friendId) {
+                const friend = this.friends.find(friend => friend.id === friendId);
+                friend.isFavorite = !isFavorite;
+            }
+        }
+    </script>
+
+
