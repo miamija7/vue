@@ -72,7 +72,6 @@ SLOTS:
             <slot></slot>
         </div>
     </template>
-
 - multiple slots
 -v-slot directive let Vue know which slot content should go to
     <template>
@@ -81,5 +80,19 @@ SLOTS:
             <slot></slot>
         </div>
     </template>
-
     <template v-slot:header>
+- slots do have fallback content
+- in a component with slots, you can use the built-in property $slot to not render empty components
+    <template>
+        <div>
+            <slot name="header" v-if="$slots.header"></slot>
+            <slot></slot>
+        </div>
+    </template>
+- shorthand (v-slot: == #)
+    <template #header>
+- scoped slots
+- you can pass props on slots
+    ** App.vue **
+
+
