@@ -270,3 +270,25 @@ PROVIDE + INJECT (for custom events)
 NOTES:
 - PROPS & CUSTOM EVENTS are default!
 - EXPORT & INJECT are for special cases ;)
+
+
+
+SUMMARY:
+Component Communication Overview
+- componentsare used to build UIs by combining them
+- components build 'parent-child' relations
+- components use unidirectional data flows for communication
+
+Props
+- props are used to pass data from a parent to a child component
+- props should be defined in advance, possibly in great detail (type, required, etc)
+
+Custom Events 
+- child => parent
+- custom events are emmitted ($emit) to trigger a method in a parent component
+- custom events can carry data which can be used in the called method
+
+Provide-Inject
+- if data needs to be passed across multiple components (pass-through), you can use provide/inject
+- provide data in a parent component
+- inject data into a child component
