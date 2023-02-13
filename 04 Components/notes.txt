@@ -47,6 +47,8 @@ Registering Components
                 'my-component': MyComponent
                     OR
                 MyComponent: MyComponent
+                    OR
+                MyComponent
             }
         }
     </script>
@@ -55,3 +57,9 @@ Registering Components
             OR
         <my-component></my-component>
     </template>
+
+
+STYLING:
+- you can create global styles, or component styles
+    <style></style>
+    <style scoped></style>
