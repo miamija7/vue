@@ -23,3 +23,35 @@ Components:
 - compenents are mini apps in a Vue main app
 
 
+============= Component Deep Dive =============
+
+
+OVERVIEW:
+- Component registration & styling
+- Slots & dynamic components
+- Naming & Folder structure
+
+Registering Components
+- when you use the below syntax, you are registering that component globally
+    ** main.js **
+    app.component('my-component', MyComponent);
+- downside: themore components we have the more code packages we have, global registration means they all have to load everything initially
+- downside: component useages become blurry when the list grows longer and longer
+- keep the app.vue file CLEAN
+- SOLUTION: register components locally
+    ** App.vue **
+    <script>
+        import MyComponent from './components/MyComponent.vue'
+        export default {
+            components: {
+                'my-component': MyComponent
+                    OR
+                MyComponent: MyComponent
+            }
+        }
+    </script>
+    <template>
+        <MyComponent />
+            OR
+        <my-component></my-component>
+    </template>
