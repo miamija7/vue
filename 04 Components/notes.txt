@@ -63,3 +63,23 @@ STYLING:
 - you can create global styles, or component styles
     <style></style>
     <style scoped></style>
+
+SLOTS:
+- to make a flexible component with dynamic content you need SLOTS
+- slots allot us to receive HTML
+    <template>
+        <div>
+            <slot></slot>
+        </div>
+    </template>
+
+- multiple slots
+-v-slot directive let Vue know which slot content should go to
+    <template>
+        <div>
+            <slot name="header"></slot>
+            <slot></slot>
+        </div>
+    </template>
+
+    <template v-slot:header>
