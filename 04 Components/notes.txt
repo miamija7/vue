@@ -95,4 +95,3 @@ SLOTS:
 - you can pass props on slots
     ** App.vue **
 
-

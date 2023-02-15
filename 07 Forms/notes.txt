@@ -1,0 +1,15 @@
+============= V-models & Inputs =============
+
+v-bind="userAge" ref="ageInput"         this.$refs.ageInput.value   //STRING
+v-model=""userAge"                      this.userAge                // NUMBER
+
+
+FORM INPUTS                 VUE FEATURE     TYPE
+text                        v-model         string
+number                      v-model         number
+
+
+VUE MODEL FEATURES
+.number             force type conversion to number
+.trim               remove leading/trailing whitespace
+.lazy               update variable at a lower frequency
