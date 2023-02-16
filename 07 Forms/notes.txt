@@ -15,3 +15,29 @@ VUE MODEL FEATURES
 .number             force type conversion to number
 .trim               remove leading/trailing whitespace
 .lazy               update variable at a lower frequency
+
+============= Input Validation =============
+
+<template>
+    <... @blur="validateInput" :class={invalid: nameValidation === 'invalid'} />
+    <p v-if="nameValidation === 'invalid'">Please enter a valid name!</p>
+</template>
+
+<script>
+    data() {
+        name = "",
+        nameValidation = "Pending"
+    },
+    methods: {
+        validateInput() {
+            if (name === "") { nameValidation = 'invalid' }
+            else { nameValidation = 'valid' }
+        },
+    }
+</script>
+
+<style>
+    input.invalid {
+        border-color: red;
+    }
+</style>
