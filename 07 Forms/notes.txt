@@ -19,8 +19,10 @@ VUE MODEL FEATURES
 ============= Input Validation =============
 
 <template>
-    <... @blur="validateInput" :class={invalid: nameValidation === 'invalid'} />
+    ...
+    <... v-model.trim="name" @blur="validateInput" :class={invalid: nameValidation === 'invalid'} />
     <p v-if="nameValidation === 'invalid'">Please enter a valid name!</p>
+    ...
 </template>
 
 <script>
@@ -36,8 +38,45 @@ VUE MODEL FEATURES
     }
 </script>
 
-<style>
+<style scoped>
     input.invalid {
         border-color: red;
     }
 </style>
+
+
+============= Custom Input =============
+
+
+@input="" :value=""                         ===         v-model=""
+:model-value="" @update:modelValue=""       ===         v-model=""
+
+** Custom Model **
+<template>
+    <... :class="{ active: modelValue === 'poor/average/great'}""
+</template>
+
+<script>
+export default {
+    props: ['modelValue'],
+    emits: ['update:modelValue'],
+    // NOT REACTIVE (USE COMPUTED)
+    data() {
+        return{
+            activeOption: this.modelValue,
+        }
+    },
+    // REACTIVE (BUT USE modelValue IN TEMPLATE FOR BEST SOLUTION)
+    computed: {
+        activeOption() {
+            return this.modelValue;
+        }
+    },
+    methods: {
+        active(option) {
+            this.activeOption = option,
+            this.$emit('update:modelValue', option)
+        }
+    }
+}
+</script>
