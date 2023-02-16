@@ -4,10 +4,12 @@ v-bind="userAge" ref="ageInput"         this.$refs.ageInput.value   //STRING
 v-model=""userAge"                      this.userAge                // NUMBER
 
 
-FORM INPUTS                 VUE FEATURE     TYPE
-text                        v-model         string
-number                      v-model         number
-
+FORM INPUTS                 VUE FEATURE     START TYPE
+text                        v-model         init with empty string
+number                      v-model         init with null
+select                      v-model         init it with preferred default string value
+checkboxes                  v-model         init with [] OR true/false (for single checkboxes)
+radio buttons               v-model         init with null
 
 VUE MODEL FEATURES
 .number             force type conversion to number
