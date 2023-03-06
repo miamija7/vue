@@ -1,0 +1,18 @@
+///////// State Management with Vuex /////////
+
+*replaces provide/inject*
+
+What is Vuex?
+- Vuex is a library for managing global state
+- state is data your application that is reactive
+- state is either local or global
+    + local is component data
+    + global is data for the entire app
+- managing app wide/global state can be difficult
+    + fat components
+    + unpredictable
+    + rror-prone
+- with vuex
+    + outsourced state
+    + predictable state management / flow
+    + clearly defined data flow: less errors
