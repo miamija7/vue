@@ -16,3 +16,15 @@ What is Vuex?
     + outsourced state
     + predictable state management / flow
     + clearly defined data flow: less errors
+
+Project | vue-app-vuex 
+% npm install
+% npm instal --save vuex@next
+% npm run serve
+
+
+How Vuex Works
+- mutations -> App-wide, central data/state store <---> components
+- mutations are clearly defined methods that have the logic to update the state
+- components should trigger mutations, not directly modify the state
+- 
