@@ -36,3 +36,36 @@ How Vuex Works
     |           /state store                |
     |                                       |
     -----------------------------------------
+
+
+Actions
+- can be asyncronous
+- recieves context object
+- you should never directly modify the state, use mutations for that
+- executes mutations: 
+    actions:{
+        increment(context){
+            context.commit('increment');
+        }
+    }
+    //In App
+    his.$store.dispatch
+
+
+Mutations
+- directly modifies the state/data
+
+Getters
+- getting into our store
+
+Mappers
+- in components, use mapGetters for computed properties instead of this.$store.getters.finalCounter 
+    <script>
+        import {mapGetters} from 'vuex';
+
+        export default{
+            computed: {
+                ...mapGetters(['finalCounter])
+            }
+        }
+    </script>
